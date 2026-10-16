@@ -19,7 +19,9 @@ export function ThemeToggle() {
 
     document.documentElement.classList.toggle("dark", nextTheme === "dark");
     document.documentElement.style.colorScheme = nextTheme;
-    localStorage.setItem("theme", nextTheme);
+    try {
+      localStorage.setItem("theme", nextTheme);
+    } catch {}
     setTheme(nextTheme);
   };
 
